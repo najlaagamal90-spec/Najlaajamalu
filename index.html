@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أُفُق للسياحة والسفر | الرئيسية</title>
+<meta name="description" content="أُفُق للسياحة والسفر — احجز رحلتك القادمة بثقة: طيران، فنادق، وبرامج سياحية متكاملة.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===================== شريط التنقل ===================== -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">✈</span>
+      <span data-i18n="brand.name">أُفُق للسياحة والسفر</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+      <a href="destinations.html" data-i18n="nav.destinations">الوجهات</a>
+      <a href="index.html#services" data-i18n="nav.services">خدماتنا</a>
+      <a href="booking.html" data-i18n="nav.booking">اطلب رحلتك</a>
+      <a href="contact.html" data-i18n="nav.contact">تواصل معنا</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="theme-switch" title="تغيير لون الموقع">
+        <span class="theme-dot" data-t="horizon"></span>
+        <span class="theme-dot" data-t="forest"></span>
+        <span class="theme-dot" data-t="sunset"></span>
+        <span class="theme-dot" data-t="night"></span>
+      </div>
+      <button class="icon-btn lang-btn" type="button" aria-label="Change language">EN</button>
+
+      <a href="login.html" id="navLoginLink" class="btn btn-outline" style="padding:.6rem 1.3rem;font-size:.85rem;" data-i18n="nav.login">تسجيل الدخول</a>
+
+      <div class="user-chip" id="userChip">
+        <span class="avatar" id="userChipAvatar">A</span>
+        <span id="userChipName">User</span>
+        <button class="icon-btn" id="logoutBtn" title="تسجيل الخروج" style="width:30px;height:30px;font-size:.85rem;">⏻</button>
+      </div>
+
+      <button class="burger" id="burgerBtn" aria-label="menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== الهيرو ===================== -->
+<section class="hero">
+  <div class="hero-bg-shape" aria-hidden="true"></div>
+  <div class="container hero-grid">
+
+    <div class="hero-copy reveal">
+      <span class="eyebrow" data-i18n="hero.eyebrow">وكالة سفر معتمدة منذ ٢٠١٤</span>
+      <h1>
+        <span data-i18n="hero.title_a">احجز رحلتك القادمة</span><br>
+        <span data-i18n="hero.title_b">بثقة، وبأفضل سعر</span>
+      </h1>
+      <p data-i18n="hero.desc">نخطط لك رحلات مخصصة داخل وخارج السودان: طيران، فنادق، وبرامج سياحية متكاملة بإشراف فريق متخصص على مدار الساعة.</p>
+
+      <div class="hero-cta">
+        <a href="booking.html" class="btn btn-gold" data-i18n="hero.cta1">اطلب رحلتك الآن</a>
+        <a href="#destinations" class="btn btn-outline" data-i18n="hero.cta2">تصفح الوجهات</a>
+      </div>
+
+      <div class="hero-stats">
+        <div><strong>+٥٠٠</strong><span data-i18n="hero.stat1">رحلة منظمة</span></div>
+        <div><strong>+٣٢٠٠</strong><span data-i18n="hero.stat2">عميل سعيد</span></div>
+        <div><strong>٤٠+</strong><span data-i18n="hero.stat3">وجهة سياحية</span></div>
+        <div><strong>١٠+</strong><span data-i18n="hero.stat4">سنة خبرة</span></div>
+      </div>
+    </div>
+
+    <!-- بطاقة صعود الطائرة — العنصر البصري المميز للموقع -->
+    <div class="hero-visual reveal reveal-delay-2">
+      <div class="boarding-pass">
+        <div class="bp-top">
+          <div>
+            <small data-i18n="bp.label">بطاقة صعود</small>
+            <strong style="display:block;" data-i18n="bp.subtitle">من هنا... إلى أي مكان</strong>
+          </div>
+          <span style="font-size:1.4rem;">✈</span>
+        </div>
+        <div class="bp-route">
+          <div class="city"><strong>KRT</strong><span data-i18n="bp.from">من</span></div>
+          <div class="bp-plane">✈</div>
+          <div class="city"><strong>???</strong><span data-i18n="bp.to">إلى</span></div>
+        </div>
+        <div class="bp-perf"></div>
+        <div class="bp-details">
+          <div><span data-i18n="bp.passenger">المسافر</span><strong>You</strong></div>
+          <div><span data-i18n="bp.date">التاريخ</span><strong id="bpDate">--/--</strong></div>
+          <div><span data-i18n="bp.seat">الدرجة</span><strong data-i18n="bp.seat_val">سياحية / رجال أعمال</strong></div>
+        </div>
+        <div class="stamp">
+          <span class="stamp-icon">✈</span>
+          <span data-i18n="stamp.text1">أُفُق</span>
+          <span data-i18n="stamp.text2">منذ ٢٠١٤</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== خدماتنا ===================== -->
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="services.eyebrow">خدماتنا</span>
+      <h2 data-i18n="services.title">كل ما تحتاجه لرحلة مريحة</h2>
+      <p data-i18n="services.desc">من أول فكرة السفر وحتى العودة، نتولى كل التفاصيل نيابة عنك.</p>
+    </div>
+
+    <div class="grid grid-4">
+      <div class="service reveal">
+        <div class="ic">🎫</div>
+        <h3 data-i18n="services.1.title">حجز تذاكر الطيران</h3>
+        <p data-i18n="services.1.desc">أفضل أسعار الطيران على كل شركات الطيران المحلية والعالمية.</p>
+      </div>
+      <div class="service reveal reveal-delay-1">
+        <div class="ic">🏨</div>
+        <h3 data-i18n="services.2.title">حجز الفنادق</h3>
+        <p data-i18n="services.2.desc">شراكات مع فنادق مختارة بعناية بمختلف الفئات والميزانيات.</p>
+      </div>
+      <div class="service reveal reveal-delay-2">
+        <div class="ic">🗺️</div>
+        <h3 data-i18n="services.3.title">برامج سياحية جاهزة</h3>
+        <p data-i18n="services.3.desc">باقات سياحية متكاملة مع مرشدين سياحيين ومواصلات خاصة.</p>
+      </div>
+      <div class="service reveal reveal-delay-3">
+        <div class="ic">🛂</div>
+        <h3 data-i18n="services.4.title">تأشيرات وسفر</h3>
+        <p data-i18n="services.4.desc">متابعة إجراءات التأشيرات والتأمين الصحي لرحلة بلا قلق.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== الوجهات ===================== -->
+<section id="destinations" style="background:var(--surface-2);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="destinations.eyebrow">الوجهات</span>
+      <h2 data-i18n="destinations.title">وجهات رائجة هذا الموسم</h2>
+      <p data-i18n="destinations.desc">اختر من بين أفضل الوجهات السياحية المطلوبة حالياً.</p>
+      <a href="destinations.html" class="btn btn-outline" style="margin-top:1rem;" data-i18n="destinations.see_all">شاهد كل الوجهات</a>
+    </div>
+
+    <div class="grid grid-4">
+      <article class="card reveal">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=60');">
+          <span class="price-tag">$699</span>
+        </div>
+        <div class="card-body">
+          <h3 data-i18n="destinations.d1.name">إسطنبول، تركيا</h3>
+          <p data-i18n="destinations.d1.desc">٧ أيام / ٦ ليالٍ — يشمل الفندق والفطور والجولات</p>
+          <div class="card-meta">
+            <span data-i18n="destinations.per_person">للفرد</span>
+            <a href="booking.html" class="badge" data-i18n="destinations.book">احجز الآن</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal reveal-delay-1">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=60');">
+          <span class="price-tag">$549</span>
+        </div>
+        <div class="card-body">
+          <h3 data-i18n="destinations.d2.name">دبي، الإمارات</h3>
+          <p data-i18n="destinations.d2.desc">٥ أيام / ٤ ليالٍ — يشمل تذاكر برج خليفة والسفاري</p>
+          <div class="card-meta">
+            <span data-i18n="destinations.per_person">للفرد</span>
+            <a href="booking.html" class="badge" data-i18n="destinations.book">احجز الآن</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal reveal-delay-2">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1568322445389-f64ac9c9992c?w=600&q=60');">
+          <span class="price-tag">$629</span>
+        </div>
+        <div class="card-body">
+          <h3 data-i18n="destinations.d3.name">القاهرة والأقصر، مصر</h3>
+          <p data-i18n="destinations.d3.desc">٦ أيام / ٥ ليالٍ — رحلة نيلية وزيارة الأهرامات</p>
+          <div class="card-meta">
+            <span data-i18n="destinations.per_person">للفرد</span>
+            <a href="booking.html" class="badge" data-i18n="destinations.book">احجز الآن</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal reveal-delay-3">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=60');">
+          <span class="price-tag">$899</span>
+        </div>
+        <div class="card-body">
+          <h3 data-i18n="destinations.d4.name">كوالالمبور، ماليزيا</h3>
+          <p data-i18n="destinations.d4.desc">٨ أيام / ٧ ليالٍ — طبيعة، تسوق، وحدائق استوائية</p>
+          <div class="card-meta">
+            <span data-i18n="destinations.per_person">للفرد</span>
+            <a href="booking.html" class="badge" data-i18n="destinations.book">احجز الآن</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== لماذا أُفُق ===================== -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="why.eyebrow">لماذا أُفُق</span>
+      <h2 data-i18n="why.title">نرتب لك كل التفاصيل، أنت فقط استمتع</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="service reveal">
+        <div class="ic">💳</div>
+        <h3 data-i18n="why.1.title">أسعار شفافة</h3>
+        <p data-i18n="why.1.desc">لا رسوم خفية، تعرف تكلفة رحلتك بالكامل من البداية.</p>
+      </div>
+      <div class="service reveal reveal-delay-1">
+        <div class="ic">🕑</div>
+        <h3 data-i18n="why.2.title">دعم على مدار الساعة</h3>
+        <p data-i18n="why.2.desc">فريقنا معك قبل وأثناء وبعد الرحلة في أي وقت تحتاجه.</p>
+      </div>
+      <div class="service reveal reveal-delay-2">
+        <div class="ic">🧭</div>
+        <h3 data-i18n="why.3.title">برامج مخصصة</h3>
+        <p data-i18n="why.3.desc">نصمم رحلتك حسب رغبتك، لا باقات جاهزة تفرض عليك.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== آراء العملاء ===================== -->
+<section style="background:var(--surface-2);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="testimonials.eyebrow">آراء عملائنا</span>
+      <h2 data-i18n="testimonials.title">قصص من رحلات حقيقية</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal" style="padding:1.6rem;">
+        <p style="color:var(--muted);margin-bottom:1rem;" data-i18n="testimonials.1.text">تعامل احترافي من أول استفسار حتى العودة من الرحلة، كل شيء كان منظم بدقة.</p>
+        <strong data-i18n="testimonials.1.name">محمد الطيب</strong>
+        <div style="color:var(--muted);font-size:.8rem;" data-i18n="testimonials.1.role">رحلة إسطنبول</div>
+      </div>
+      <div class="card reveal reveal-delay-1" style="padding:1.6rem;">
+        <p style="color:var(--muted);margin-bottom:1rem;" data-i18n="testimonials.2.text">أسعار ممتازة وفريق متعاون جداً في الرد على كل الأسئلة قبل الحجز.</p>
+        <strong data-i18n="testimonials.2.name">سارة عبدالله</strong>
+        <div style="color:var(--muted);font-size:.8rem;" data-i18n="testimonials.2.role">رحلة دبي</div>
+      </div>
+      <div class="card reveal reveal-delay-2" style="padding:1.6rem;">
+        <p style="color:var(--muted);margin-bottom:1rem;" data-i18n="testimonials.3.text">أول مرة أسافر بدون قلق، كل التفاصيل كانت جاهزة من المطار للفندق.</p>
+        <strong data-i18n="testimonials.3.name">عمر حسن</strong>
+        <div style="color:var(--muted);font-size:.8rem;" data-i18n="testimonials.3.role">رحلة القاهرة</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA + نشرة بريدية ===================== -->
+<section>
+  <div class="container">
+    <div class="reveal" style="background:linear-gradient(120deg,var(--primary),var(--primary-dark));border-radius:var(--radius-lg);padding:3rem;text-align:center;color:var(--on-primary);">
+      <h2 data-i18n="cta.title" style="margin-bottom:.6rem;">جاهز لبدء رحلتك؟</h2>
+      <p style="opacity:.85;margin-bottom:1.6rem;" data-i18n="cta.desc">اترك بريدك الإلكتروني ليصلك أحدث العروض والوجهات أولاً بأول.</p>
+      <form class="newsletter" style="max-width:420px;margin:0 auto;" onsubmit="event.preventDefault(); this.reset(); return false;">
+        <input type="email" required data-i18n-placeholder="cta.placeholder" placeholder="بريدك الإلكتروني">
+        <button type="submit" data-i18n="cta.button">اشترك الآن</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== التذييل ===================== -->
+<footer>
+  <div class="footer-top"></div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" style="color:#fff;">
+          <span class="brand-mark">✈</span>
+          <span data-i18n="brand.name">أُفُق للسياحة والسفر</span>
+        </a>
+        <p data-i18n="footer.about">وكالة سياحة وسفر سودانية متخصصة في تصميم رحلات مخصصة داخل وخارج البلاد بخبرة تمتد لأكثر من عشر سنوات.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="X">x</a>
+          <a href="#" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.links">روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="destinations.html" data-i18n="nav.destinations">الوجهات</a></li>
+          <li><a href="booking.html" data-i18n="nav.booking">اطلب رحلتك</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.services">خدماتنا</h4>
+        <ul>
+          <li><a href="index.html#services" data-i18n="services.1.title">حجز تذاكر الطيران</a></li>
+          <li><a href="index.html#services" data-i18n="services.2.title">حجز الفنادق</a></li>
+          <li><a href="index.html#services" data-i18n="services.3.title">برامج سياحية جاهزة</a></li>
+          <li><a href="index.html#services" data-i18n="services.4.title">تأشيرات وسفر</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.newsletter_title">النشرة البريدية</h4>
+        <p style="color:#C7D8D5;font-size:.85rem;margin-bottom:.8rem;" data-i18n="footer.newsletter_desc">اشترك ليصلك كل جديد عن العروض والوجهات.</p>
+        <form class="newsletter" onsubmit="event.preventDefault(); this.reset(); return false;">
+          <input type="email" required data-i18n-placeholder="cta.placeholder" placeholder="بريدك الإلكتروني">
+          <button type="submit" data-i18n="cta.button">اشترك</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> <span data-i18n="brand.name">أُفُق للسياحة والسفر</span> — <span data-i18n="footer.rights">جميع الحقوق محفوظة</span></span>
+      <div class="legal-links">
+        <a href="#" data-i18n="footer.privacy">سياسة الخصوصية</a>
+        <a href="#" data-i18n="footer.terms">الشروط والأحكام</a>
+        <a href="#" data-i18n="footer.faq">الأسئلة الشائعة</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTopBtn" aria-label="Back to top">↑</button>
+
+<script src="js/translations.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById("bpDate") && (document.getElementById("bpDate").textContent =
+    new Date().toLocaleDateString("en-GB", { day: "2-digit", month: "short" }));
+</script>
+</body>
+</html>

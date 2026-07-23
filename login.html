@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أُفُق للسياحة والسفر | تسجيل الدخول</title>
+<meta name="description" content="سجّل الدخول أو أنشئ حساباً جديداً في أُفُق للسياحة والسفر.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .auth-wrap{min-height:calc(100vh - 74px);display:flex;align-items:center;padding-block:3rem;position:relative;overflow:hidden;}
+  .auth-wrap .hero-bg-shape{inset-inline-start:auto;inset-inline-end:-10%;}
+</style>
+</head>
+<body>
+
+<!-- ===================== شريط التنقل ===================== -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">✈</span>
+      <span data-i18n="brand.name">أُفُق للسياحة والسفر</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+      <a href="destinations.html" data-i18n="nav.destinations">الوجهات</a>
+      <a href="booking.html" data-i18n="nav.booking">اطلب رحلتك</a>
+      <a href="contact.html" data-i18n="nav.contact">تواصل معنا</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="theme-switch" title="تغيير لون الموقع">
+        <span class="theme-dot" data-t="horizon"></span>
+        <span class="theme-dot" data-t="forest"></span>
+        <span class="theme-dot" data-t="sunset"></span>
+        <span class="theme-dot" data-t="night"></span>
+      </div>
+      <button class="icon-btn lang-btn" type="button" aria-label="Change language">EN</button>
+      <div class="user-chip" id="userChip">
+        <span class="avatar" id="userChipAvatar">A</span>
+        <span id="userChipName">User</span>
+        <button class="icon-btn" id="logoutBtn" title="تسجيل الخروج" style="width:30px;height:30px;font-size:.85rem;">⏻</button>
+      </div>
+      <button class="burger" id="burgerBtn" aria-label="menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== نموذج الدخول / التسجيل ===================== -->
+<section class="auth-wrap">
+  <div class="hero-bg-shape" aria-hidden="true"></div>
+  <div class="container">
+    <div class="form-card reveal" style="position:relative;z-index:1;">
+
+      <div style="text-align:center;margin-bottom:1.6rem;">
+        <span class="brand-mark" style="width:56px;height:56px;font-size:1.5rem;display:inline-flex;">✈</span>
+      </div>
+
+      <h2 id="authTitle" data-i18n="login.title">أهلاً بعودتك</h2>
+      <p id="authSubtitle" data-i18n="login.subtitle">سجّل الدخول لمتابعة حجوزاتك وعروضك الخاصة</p>
+
+      <div class="tabs">
+        <button type="button" class="tab-btn active" data-target="loginPanel" data-i18n="login.tab_login">تسجيل الدخول</button>
+        <button type="button" class="tab-btn" data-target="registerPanel" data-i18n="login.tab_register">حساب جديد</button>
+      </div>
+
+      <!-- لوحة تسجيل الدخول -->
+      <div class="form-panel active" id="loginPanel">
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label data-i18n="login.email">البريد الإلكتروني</label>
+            <input type="email" name="email" data-rule="required|email" autocomplete="email">
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label data-i18n="login.password">كلمة المرور</label>
+            <input type="password" name="password" data-rule="required|min:6" autocomplete="current-password">
+            <small class="error"></small>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.4rem;font-size:.85rem;">
+            <label class="check-row"><input type="checkbox" style="width:auto;"> <span data-i18n="login.remember">تذكرني</span></label>
+            <a href="#" style="color:var(--primary);font-weight:700;" data-i18n="login.forgot">نسيت كلمة المرور؟</a>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="login.submit">دخول</button>
+          <p style="text-align:center;margin-top:1.2rem;font-size:.88rem;color:var(--muted);">
+            <span data-i18n="login.no_account">ليس لديك حساب؟</span>
+            <a href="#" data-switch-tab="registerPanel" style="color:var(--primary);font-weight:800;" data-i18n="login.create_one">أنشئ حساباً</a>
+          </p>
+        </form>
+      </div>
+
+      <!-- لوحة إنشاء حساب -->
+      <div class="form-panel" id="registerPanel">
+        <form id="registerForm" novalidate>
+          <div class="field">
+            <label data-i18n="register.full_name">الاسم الكامل</label>
+            <input type="text" name="fullName" data-rule="required|min:3">
+            <small class="error"></small>
+          </div>
+          <div class="row-2">
+            <div class="field">
+              <label data-i18n="register.email">البريد الإلكتروني</label>
+              <input type="email" name="email" data-rule="required|email">
+              <small class="error"></small>
+            </div>
+            <div class="field">
+              <label data-i18n="register.phone">رقم الهاتف</label>
+              <input type="tel" name="phone" data-rule="required|phone">
+              <small class="error"></small>
+            </div>
+          </div>
+          <div class="field">
+            <label data-i18n="register.password">كلمة المرور</label>
+            <input type="password" name="password" id="regPassword" data-rule="required|min:8" autocomplete="new-password">
+            <div class="pw-strength"><span id="pwStrengthBar"></span></div>
+            <small class="hint" id="pwStrengthLabel"></small>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label data-i18n="register.confirm">تأكيد كلمة المرور</label>
+            <input type="password" name="confirm" data-rule="required|match:#regPassword" autocomplete="new-password">
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label class="check-row">
+              <input type="checkbox" name="terms" data-rule="terms" style="width:auto;">
+              <span data-i18n="register.terms">أوافق على الشروط والأحكام</span>
+            </label>
+            <small class="error"></small>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="register.submit">إنشاء الحساب</button>
+          <p style="text-align:center;margin-top:1.2rem;font-size:.88rem;color:var(--muted);">
+            <span data-i18n="register.have_account">لديك حساب بالفعل؟</span>
+            <a href="#" data-switch-tab="loginPanel" style="color:var(--primary);font-weight:800;" data-i18n="register.login_now">سجّل الدخول</a>
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== التذييل ===================== -->
+<footer>
+  <div class="footer-top"></div>
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:2rem;">
+      <span>© <span data-year>2026</span> <span data-i18n="brand.name">أُفُق للسياحة والسفر</span> — <span data-i18n="footer.rights">جميع الحقوق محفوظة</span></span>
+      <div class="legal-links">
+        <a href="#" data-i18n="footer.privacy">سياسة الخصوصية</a>
+        <a href="#" data-i18n="footer.terms">الشروط والأحكام</a>
+        <a href="contact.html" data-i18n="nav.contact">تواصل معنا</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/translations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

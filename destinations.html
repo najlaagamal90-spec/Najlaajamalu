@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أُفُق للسياحة والسفر | الوجهات</title>
+<meta name="description" content="استكشف كل وجهات أُفُق للسياحة والسفر حول العالم.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .filter-bar{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin-bottom:2.6rem;}
+  .filter-btn{
+    padding:.6rem 1.3rem;border-radius:999px;border:1.5px solid var(--border);background:var(--surface);
+    color:var(--muted);font-family:var(--font-display);font-weight:700;font-size:.85rem;cursor:pointer;
+    transition:all .25s var(--ease);
+  }
+  .filter-btn.active,.filter-btn:hover{background:var(--primary);border-color:var(--primary);color:var(--on-primary);}
+  .dest-card{transition:opacity .35s var(--ease), transform .35s var(--ease);}
+  .dest-card.hide{display:none;}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">✈</span>
+      <span data-i18n="brand.name">أُفُق للسياحة والسفر</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+      <a href="destinations.html" class="active" data-i18n="nav.destinations">الوجهات</a>
+      <a href="booking.html" data-i18n="nav.booking">اطلب رحلتك</a>
+      <a href="contact.html" data-i18n="nav.contact">تواصل معنا</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="theme-switch" title="تغيير لون الموقع">
+        <span class="theme-dot" data-t="horizon"></span>
+        <span class="theme-dot" data-t="forest"></span>
+        <span class="theme-dot" data-t="sunset"></span>
+        <span class="theme-dot" data-t="night"></span>
+      </div>
+      <button class="icon-btn lang-btn" type="button" aria-label="Change language">EN</button>
+      <a href="login.html" id="navLoginLink" class="btn btn-outline" style="padding:.6rem 1.3rem;font-size:.85rem;" data-i18n="nav.login">تسجيل الدخول</a>
+      <div class="user-chip" id="userChip">
+        <span class="avatar" id="userChipAvatar">A</span>
+        <span id="userChipName">User</span>
+        <button class="icon-btn" id="logoutBtn" title="تسجيل الخروج" style="width:30px;height:30px;font-size:.85rem;">⏻</button>
+      </div>
+      <button class="burger" id="burgerBtn" aria-label="menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<section style="padding-bottom:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="destinations.eyebrow">الوجهات</span>
+      <h2 data-i18n="destinations.page_title">استكشف كل وجهاتنا</h2>
+      <p data-i18n="destinations.page_desc">أكثر من ٤٠ وجهة حول العالم بانتظارك، اختر واحجز الآن.</p>
+    </div>
+
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all" data-i18n="destinations.filter_all">الكل</button>
+      <button class="filter-btn" data-filter="asia" data-i18n="destinations.filter_asia">آسيا</button>
+      <button class="filter-btn" data-filter="europe" data-i18n="destinations.filter_europe">أوروبا</button>
+      <button class="filter-btn" data-filter="gulf" data-i18n="destinations.filter_gulf">الخليج</button>
+      <button class="filter-btn" data-filter="africa" data-i18n="destinations.filter_africa">أفريقيا</button>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="grid grid-4" id="destGrid">
+
+      <article class="card dest-card reveal" data-region="europe">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=60');"><span class="price-tag">$699</span></div>
+        <div class="card-body">
+          <h3 data-i18n="destinations.d1.name">إسطنبول، تركيا</h3>
+          <p data-i18n="destinations.d1.desc">٧ أيام / ٦ ليالٍ — يشمل الفندق والفطور والجولات</p>
+          <div class="card-meta"><span data-i18n="destinations.per_person">للفرد</span><a href="booking.html" class="badge" data-i18n="destinations.book">احجز الآن</a></div>
+        </div>
+      </article>
+
+      <article class="card dest-card reveal reveal-delay-1" data-region="gulf">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=60');"><span class="price-tag">$549</span></div>
+        <div class="card-body">
+          <h3 data-i18n="destinations.d2.name">دبي، الإمارات</h3>
+          <p data-i18n="destinations.d2.desc">٥ أيام / ٤ ليالٍ — يشمل تذاكر برج خليفة والسفاري</p>
+          <div class="card-meta"><span data-i18n="destinations.per_person">للفرد</span><a href="booking.html" class="badge" data-i18n="destinations.book">احجز الآن</a></div>
+        </div>
+      </article>
+
+      <article class="card dest-card reveal reveal-delay-2" data-region="africa">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1568322445389-f64ac9c9992c?w=600&q=60');"><span class="price-tag">$629</span></div>
+        <div class="card-body">
+          <h3 data-i18n="destinations.d3.name">القاهرة والأقصر، مصر</h3>
+          <p data-i18n="destinations.d3.desc">٦ أيام / ٥ ليالٍ — رحلة نيلية وزيارة الأهرامات</p>
+          <div class="card-meta"><span data-i18n="destinations.per_person">للفرد</span><a href="booking.html" class="badge" data-i18n="destinations.book">احجز الآن</a></div>
+        </div>
+      </article>
+
+      <article class="card dest-card reveal reveal-delay-3" data-region="asia">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=60');"><span class="price-tag">$899</span></div>
+        <div class="card-body">
+          <h3 data-i18n="destinations.d4.name">كوالالمبور، ماليزيا</h3>
+          <p data-i18n="destinations.d4.desc">٨ أيام / ٧ ليالٍ — طبيعة، تسوق، وحدائق استوائية</p>
+          <div class="card-meta"><span data-i18n="destinations.per_person">للفرد</span><a href="booking.html" class="badge" data-i18n="destinations.book">احجز الآن</a></div>
+        </div>
+      </article>
+
+      <article class="card dest-card reveal" data-region="europe">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=60');"><span class="price-tag">$999</span></div>
+        <div class="card-body">
+          <h3 data-i18n="destinations.d5.name">باريس، فرنسا</h3>
+          <p data-i18n="destinations.d5.desc">٦ أيام / ٥ ليالٍ — برج إيفل ومتحف اللوفر وجولات نهرية</p>
+          <div class="card-meta"><span data-i18n="destinations.per_person">للفرد</span><a href="booking.html" class="badge" data-i18n="destinations.book">احجز الآن</a></div>
+        </div>
+      </article>
+
+      <article class="card dest-card reveal reveal-delay-1" data-region="asia">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=60');"><span class="price-tag">$759</span></div>
+        <div class="card-body">
+          <h3 data-i18n="destinations.d6.name">بالي، إندونيسيا</h3>
+          <p data-i18n="destinations.d6.desc">٧ أيام / ٦ ليالٍ — شواطئ، معابد، ومنتجعات فاخرة</p>
+          <div class="card-meta"><span data-i18n="destinations.per_person">للفرد</span><a href="booking.html" class="badge" data-i18n="destinations.book">احجز الآن</a></div>
+        </div>
+      </article>
+
+      <article class="card dest-card reveal reveal-delay-2" data-region="africa">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1580060839134-75a50c8c53a2?w=600&q=60');"><span class="price-tag">$819</span></div>
+        <div class="card-body">
+          <h3 data-i18n="destinations.d7.name">كيب تاون، جنوب أفريقيا</h3>
+          <p data-i18n="destinations.d7.desc">٦ أيام / ٥ ليالٍ — سفاري ومناظر طبيعية خلابة</p>
+          <div class="card-meta"><span data-i18n="destinations.per_person">للفرد</span><a href="booking.html" class="badge" data-i18n="destinations.book">احجز الآن</a></div>
+        </div>
+      </article>
+
+      <article class="card dest-card reveal reveal-delay-3" data-region="gulf">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1539768942893-daf53e448371?w=600&q=60');"><span class="price-tag">$479</span></div>
+        <div class="card-body">
+          <h3 data-i18n="destinations.d8.name">الدوحة، قطر</h3>
+          <p data-i18n="destinations.d8.desc">٤ أيام / ٣ ليالٍ — تسوق فاخر وجولات ثقافية</p>
+          <div class="card-meta"><span data-i18n="destinations.per_person">للفرد</span><a href="booking.html" class="badge" data-i18n="destinations.book">احجز الآن</a></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top"></div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" style="color:#fff;">
+          <span class="brand-mark">✈</span>
+          <span data-i18n="brand.name">أُفُق للسياحة والسفر</span>
+        </a>
+        <p data-i18n="footer.about">وكالة سياحة وسفر سودانية متخصصة في تصميم رحلات مخصصة داخل وخارج البلاد بخبرة تمتد لأكثر من عشر سنوات.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="X">x</a>
+          <a href="#" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.links">روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="destinations.html" data-i18n="nav.destinations">الوجهات</a></li>
+          <li><a href="booking.html" data-i18n="nav.booking">اطلب رحلتك</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.services">خدماتنا</h4>
+        <ul>
+          <li><a href="index.html#services" data-i18n="services.1.title">حجز تذاكر الطيران</a></li>
+          <li><a href="index.html#services" data-i18n="services.2.title">حجز الفنادق</a></li>
+          <li><a href="index.html#services" data-i18n="services.3.title">برامج سياحية جاهزة</a></li>
+          <li><a href="index.html#services" data-i18n="services.4.title">تأشيرات وسفر</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.newsletter_title">النشرة البريدية</h4>
+        <p style="color:#C7D8D5;font-size:.85rem;margin-bottom:.8rem;" data-i18n="footer.newsletter_desc">اشترك ليصلك كل جديد عن العروض والوجهات.</p>
+        <form class="newsletter" onsubmit="event.preventDefault(); this.reset(); return false;">
+          <input type="email" required data-i18n-placeholder="cta.placeholder" placeholder="بريدك الإلكتروني">
+          <button type="submit" data-i18n="cta.button">اشترك</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> <span data-i18n="brand.name">أُفُق للسياحة والسفر</span> — <span data-i18n="footer.rights">جميع الحقوق محفوظة</span></span>
+      <div class="legal-links">
+        <a href="#" data-i18n="footer.privacy">سياسة الخصوصية</a>
+        <a href="#" data-i18n="footer.terms">الشروط والأحكام</a>
+        <a href="#" data-i18n="footer.faq">الأسئلة الشائعة</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTopBtn" aria-label="Back to top">↑</button>
+
+<script src="js/translations.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // فلترة الوجهات حسب المنطقة الجغرافية (لهذه الصفحة فقط)
+  document.querySelectorAll(".filter-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const filter = btn.dataset.filter;
+      document.querySelectorAll(".dest-card").forEach((card) => {
+        const match = filter === "all" || card.dataset.region === filter;
+        card.classList.toggle("hide", !match);
+      });
+    });
+  });
+</script>
+</body>
+</html>

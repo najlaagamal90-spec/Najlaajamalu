@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أُفُق للسياحة والسفر | تواصل معنا</title>
+<meta name="description" content="تواصل مع فريق أُفُق للسياحة والسفر لأي استفسار أو مساعدة في التخطيط لرحلتك.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">✈</span>
+      <span data-i18n="brand.name">أُفُق للسياحة والسفر</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+      <a href="destinations.html" data-i18n="nav.destinations">الوجهات</a>
+      <a href="booking.html" data-i18n="nav.booking">اطلب رحلتك</a>
+      <a href="contact.html" class="active" data-i18n="nav.contact">تواصل معنا</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="theme-switch" title="تغيير لون الموقع">
+        <span class="theme-dot" data-t="horizon"></span>
+        <span class="theme-dot" data-t="forest"></span>
+        <span class="theme-dot" data-t="sunset"></span>
+        <span class="theme-dot" data-t="night"></span>
+      </div>
+      <button class="icon-btn lang-btn" type="button" aria-label="Change language">EN</button>
+      <a href="login.html" id="navLoginLink" class="btn btn-outline" style="padding:.6rem 1.3rem;font-size:.85rem;" data-i18n="nav.login">تسجيل الدخول</a>
+      <div class="user-chip" id="userChip">
+        <span class="avatar" id="userChipAvatar">A</span>
+        <span id="userChipName">User</span>
+        <button class="icon-btn" id="logoutBtn" title="تسجيل الخروج" style="width:30px;height:30px;font-size:.85rem;">⏻</button>
+      </div>
+      <button class="burger" id="burgerBtn" aria-label="menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="contact.eyebrow">تواصل معنا</span>
+      <h2 data-i18n="contact.title">نسعد بخدمتك في أي وقت</h2>
+      <p data-i18n="contact.desc">لديك سؤال أو تحتاج مساعدة في التخطيط لرحلتك؟ فريقنا جاهز للرد عليك.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="info-card reveal">
+        <div class="info-item">
+          <div class="ic">📞</div>
+          <div>
+            <strong data-i18n="contact.phone_label">اتصل بنا</strong>
+            <span dir="ltr" style="display:block;">+249 900 000 000</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="ic">✉️</div>
+          <div>
+            <strong data-i18n="contact.email_label">راسلنا</strong>
+            <span dir="ltr" style="display:block;">info@ofoq-travel.com</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="ic">📍</div>
+          <div>
+            <strong data-i18n="contact.address_label">زُرنا</strong>
+            <span data-i18n="contact.address_val">شارع النيل، الخرطوم، السودان</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="ic">🕘</div>
+          <div>
+            <strong data-i18n="contact.hours_label">ساعات العمل</strong>
+            <span data-i18n="contact.hours_val">السبت – الخميس: ٩ص – ٦م</span>
+          </div>
+        </div>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="X">x</a>
+          <a href="#" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+
+      <form id="contactForm" class="form-card reveal reveal-delay-1" style="max-width:none;" novalidate>
+        <h2 style="font-size:1.3rem;" data-i18n="contact.form_title">أرسل لنا رسالة</h2>
+        <div class="row-2">
+          <div class="field">
+            <label data-i18n="contact.name">الاسم</label>
+            <input type="text" name="name" data-rule="required|min:3">
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label data-i18n="contact.email">البريد الإلكتروني</label>
+            <input type="email" name="email" data-rule="required|email">
+            <small class="error"></small>
+          </div>
+        </div>
+        <div class="field">
+          <label data-i18n="contact.subject">الموضوع</label>
+          <select name="subject" data-rule="select">
+            <option value="" data-i18n="contact.subject_ph">اختر الموضوع</option>
+            <option value="booking" data-i18n="contact.subject_booking">استفسار عن حجز</option>
+            <option value="complaint" data-i18n="contact.subject_complaint">شكوى</option>
+            <option value="partnership" data-i18n="contact.subject_partnership">شراكة عمل</option>
+            <option value="other" data-i18n="contact.subject_other">أخرى</option>
+          </select>
+          <small class="error"></small>
+        </div>
+        <div class="field">
+          <label data-i18n="contact.message">الرسالة</label>
+          <textarea name="message" data-rule="required|min:10" data-i18n-placeholder="contact.message_ph" placeholder="اكتب رسالتك هنا..."></textarea>
+          <small class="error"></small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" data-i18n="contact.submit">إرسال الرسالة</button>
+      </form>
+    </div>
+
+    <!-- خريطة توضيحية (Placeholder) -->
+    <div class="reveal" style="margin-top:3rem;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);">
+      <iframe title="map" src="https://maps.google.com/maps?q=Khartoum,Sudan&z=12&output=embed" width="100%" height="360" style="border:0;filter:grayscale(.15);" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top"></div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" style="color:#fff;">
+          <span class="brand-mark">✈</span>
+          <span data-i18n="brand.name">أُفُق للسياحة والسفر</span>
+        </a>
+        <p data-i18n="footer.about">وكالة سياحة وسفر سودانية متخصصة في تصميم رحلات مخصصة داخل وخارج البلاد بخبرة تمتد لأكثر من عشر سنوات.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="X">x</a>
+          <a href="#" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.links">روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="destinations.html" data-i18n="nav.destinations">الوجهات</a></li>
+          <li><a href="booking.html" data-i18n="nav.booking">اطلب رحلتك</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.services">خدماتنا</h4>
+        <ul>
+          <li><a href="index.html#services" data-i18n="services.1.title">حجز تذاكر الطيران</a></li>
+          <li><a href="index.html#services" data-i18n="services.2.title">حجز الفنادق</a></li>
+          <li><a href="index.html#services" data-i18n="services.3.title">برامج سياحية جاهزة</a></li>
+          <li><a href="index.html#services" data-i18n="services.4.title">تأشيرات وسفر</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.newsletter_title">النشرة البريدية</h4>
+        <p style="color:#C7D8D5;font-size:.85rem;margin-bottom:.8rem;" data-i18n="footer.newsletter_desc">اشترك ليصلك كل جديد عن العروض والوجهات.</p>
+        <form class="newsletter" onsubmit="event.preventDefault(); this.reset(); return false;">
+          <input type="email" required data-i18n-placeholder="cta.placeholder" placeholder="بريدك الإلكتروني">
+          <button type="submit" data-i18n="cta.button">اشترك</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> <span data-i18n="brand.name">أُفُق للسياحة والسفر</span> — <span data-i18n="footer.rights">جميع الحقوق محفوظة</span></span>
+      <div class="legal-links">
+        <a href="#" data-i18n="footer.privacy">سياسة الخصوصية</a>
+        <a href="#" data-i18n="footer.terms">الشروط والأحكام</a>
+        <a href="#" data-i18n="footer.faq">الأسئلة الشائعة</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTopBtn" aria-label="Back to top">↑</button>
+
+<script src="js/translations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

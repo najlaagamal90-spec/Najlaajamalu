@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أُفُق للسياحة والسفر | اطلب رحلتك</title>
+<meta name="description" content="اطلب رحلتك المخصصة الآن مع أُفُق للسياحة والسفر.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===================== شريط التنقل ===================== -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">✈</span>
+      <span data-i18n="brand.name">أُفُق للسياحة والسفر</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+      <a href="destinations.html" data-i18n="nav.destinations">الوجهات</a>
+      <a href="index.html#services" data-i18n="nav.services">خدماتنا</a>
+      <a href="booking.html" class="active" data-i18n="nav.booking">اطلب رحلتك</a>
+      <a href="contact.html" data-i18n="nav.contact">تواصل معنا</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="theme-switch" title="تغيير لون الموقع">
+        <span class="theme-dot" data-t="horizon"></span>
+        <span class="theme-dot" data-t="forest"></span>
+        <span class="theme-dot" data-t="sunset"></span>
+        <span class="theme-dot" data-t="night"></span>
+      </div>
+      <button class="icon-btn lang-btn" type="button" aria-label="Change language">EN</button>
+      <a href="login.html" id="navLoginLink" class="btn btn-outline" style="padding:.6rem 1.3rem;font-size:.85rem;" data-i18n="nav.login">تسجيل الدخول</a>
+      <div class="user-chip" id="userChip">
+        <span class="avatar" id="userChipAvatar">A</span>
+        <span id="userChipName">User</span>
+        <button class="icon-btn" id="logoutBtn" title="تسجيل الخروج" style="width:30px;height:30px;font-size:.85rem;">⏻</button>
+      </div>
+      <button class="burger" id="burgerBtn" aria-label="menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== رأس الصفحة ===================== -->
+<section style="padding-bottom:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="booking.eyebrow">احجز رحلتك</span>
+      <h2 data-i18n="booking.title">أخبرنا بتفاصيل رحلتك</h2>
+      <p data-i18n="booking.desc">املأ النموذج التالي وسيتواصل معك أحد مستشاري السفر خلال ٢٤ ساعة.</p>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step active"><div class="num">1</div><span data-i18n="booking.step1">بيانات المسافر</span></div>
+      <div class="step"><div class="num">2</div><span data-i18n="booking.step2">تفاصيل الرحلة</span></div>
+      <div class="step"><div class="num">3</div><span data-i18n="booking.step3">التأكيد</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== النموذج + الشريط الجانبي ===================== -->
+<section style="padding-top:0;">
+  <div class="container" style="display:grid;grid-template-columns:1.5fr 1fr;gap:2.5rem;align-items:start;">
+
+    <form id="bookingForm" class="form-card reveal" style="max-width:none;" novalidate>
+      <div class="row-2">
+        <div class="field">
+          <label data-i18n="booking.full_name">الاسم الكامل</label>
+          <input type="text" name="full_name" data-rule="required|min:3">
+          <small class="error"></small>
+        </div>
+        <div class="field">
+          <label data-i18n="booking.phone">رقم الهاتف</label>
+          <input type="tel" name="phone" data-rule="required|phone">
+          <small class="error"></small>
+        </div>
+      </div>
+
+      <div class="field">
+        <label data-i18n="booking.email">البريد الإلكتروني</label>
+        <input type="email" name="email" data-rule="required|email">
+        <small class="error"></small>
+      </div>
+
+      <div class="divider-dash"></div>
+
+      <div class="row-2">
+        <div class="field">
+          <label data-i18n="booking.destination">الوجهة المطلوبة</label>
+          <select name="destination" data-rule="select">
+            <option value="" data-i18n="booking.destination_ph">اختر الوجهة</option>
+            <option value="istanbul" data-i18n="destinations.d1.name">إسطنبول، تركيا</option>
+            <option value="dubai" data-i18n="destinations.d2.name">دبي، الإمارات</option>
+            <option value="cairo" data-i18n="destinations.d3.name">القاهرة والأقصر، مصر</option>
+            <option value="kualalumpur" data-i18n="destinations.d4.name">كوالالمبور، ماليزيا</option>
+            <option value="other" data-i18n="contact.subject_other">أخرى</option>
+          </select>
+          <small class="error"></small>
+        </div>
+        <div class="field">
+          <label data-i18n="booking.trip_type">نوع الرحلة</label>
+          <select name="trip_type" data-rule="select">
+            <option value="" data-i18n="booking.trip_type_ph">اختر نوع الرحلة</option>
+            <option value="family" data-i18n="booking.trip_family">عائلية</option>
+            <option value="solo" data-i18n="booking.trip_solo">فردية</option>
+            <option value="business" data-i18n="booking.trip_business">عمل</option>
+            <option value="honeymoon" data-i18n="booking.trip_honeymoon">شهر عسل</option>
+          </select>
+          <small class="error"></small>
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label data-i18n="booking.depart_date">تاريخ السفر</label>
+          <input type="date" name="depart_date" data-rule="required">
+          <small class="error"></small>
+        </div>
+        <div class="field">
+          <label data-i18n="booking.return_date">تاريخ العودة</label>
+          <input type="date" name="return_date" data-rule="required">
+          <small class="error"></small>
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label data-i18n="booking.travelers">عدد المسافرين</label>
+          <input type="number" name="travelers" min="1" max="20" value="1" data-rule="required">
+          <small class="error"></small>
+        </div>
+        <div class="field">
+          <label data-i18n="booking.budget">الميزانية التقريبية (USD)</label>
+          <input type="number" name="budget" min="0" step="50" data-rule="required">
+          <small class="error"></small>
+        </div>
+      </div>
+
+      <div class="field">
+        <label data-i18n="booking.notes">ملاحظات إضافية</label>
+        <textarea name="notes" data-i18n-placeholder="booking.notes_ph" placeholder="أي طلبات خاصة؟ (اختياري)"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="check-row">
+          <input type="checkbox" name="agree" data-rule="terms" style="width:auto;">
+          <span data-i18n="booking.terms">أوافق على الشروط والأحكام وسياسة الخصوصية</span>
+        </label>
+        <small class="error"></small>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block" data-i18n="booking.submit">إرسال الطلب</button>
+    </form>
+
+    <!-- الشريط الجانبي: نصائح قبل الحجز -->
+    <aside class="reveal reveal-delay-1">
+      <div class="info-card">
+        <h3 style="font-size:1.1rem;" data-i18n="booking.tips_title">نصائح قبل الحجز</h3>
+        <div class="info-item">
+          <div class="ic">1</div>
+          <span data-i18n="booking.tips.1">تأكد من صلاحية جواز السفر لستة أشهر على الأقل.</span>
+        </div>
+        <div class="info-item">
+          <div class="ic">2</div>
+          <span data-i18n="booking.tips.2">احجز قبل ٣ أسابيع على الأقل لأفضل الأسعار.</span>
+        </div>
+        <div class="info-item">
+          <div class="ic">3</div>
+          <span data-i18n="booking.tips.3">أخبرنا بأي احتياجات صحية أو غذائية خاصة.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ===================== التذييل ===================== -->
+<footer>
+  <div class="footer-top"></div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" style="color:#fff;">
+          <span class="brand-mark">✈</span>
+          <span data-i18n="brand.name">أُفُق للسياحة والسفر</span>
+        </a>
+        <p data-i18n="footer.about">وكالة سياحة وسفر سودانية متخصصة في تصميم رحلات مخصصة داخل وخارج البلاد بخبرة تمتد لأكثر من عشر سنوات.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="X">x</a>
+          <a href="#" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.links">روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="destinations.html" data-i18n="nav.destinations">الوجهات</a></li>
+          <li><a href="booking.html" data-i18n="nav.booking">اطلب رحلتك</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.services">خدماتنا</h4>
+        <ul>
+          <li><a href="index.html#services" data-i18n="services.1.title">حجز تذاكر الطيران</a></li>
+          <li><a href="index.html#services" data-i18n="services.2.title">حجز الفنادق</a></li>
+          <li><a href="index.html#services" data-i18n="services.3.title">برامج سياحية جاهزة</a></li>
+          <li><a href="index.html#services" data-i18n="services.4.title">تأشيرات وسفر</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.newsletter_title">النشرة البريدية</h4>
+        <p style="color:#C7D8D5;font-size:.85rem;margin-bottom:.8rem;" data-i18n="footer.newsletter_desc">اشترك ليصلك كل جديد عن العروض والوجهات.</p>
+        <form class="newsletter" onsubmit="event.preventDefault(); this.reset(); return false;">
+          <input type="email" required data-i18n-placeholder="cta.placeholder" placeholder="بريدك الإلكتروني">
+          <button type="submit" data-i18n="cta.button">اشترك</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> <span data-i18n="brand.name">أُفُق للسياحة والسفر</span> — <span data-i18n="footer.rights">جميع الحقوق محفوظة</span></span>
+      <div class="legal-links">
+        <a href="#" data-i18n="footer.privacy">سياسة الخصوصية</a>
+        <a href="#" data-i18n="footer.terms">الشروط والأحكام</a>
+        <a href="#" data-i18n="footer.faq">الأسئلة الشائعة</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTopBtn" aria-label="Back to top">↑</button>
+
+<script src="js/translations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
